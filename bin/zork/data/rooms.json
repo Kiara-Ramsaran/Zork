@@ -1,74 +1,174 @@
 {
   "rooms": [
     {
-      "id": "Hallway",
-      "name": "Hallway",
-      "description": "You are in a long hallway. There are family pictures on all of the walls.",
-      "exits": [
-        {
-          "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Bedroom"
-        },
-        {
-          "isLocked": true,
-          "direction": "East",
-          "adjacentRoom": "Bathroom",
-          "keyId": "1234"
-        }
-      ]
-    },
-    {
-      "id": "Bedroom",
-      "name": "Bedroom",
-      "description": "You are in a large bedroom",
+      "id": "1.1",
+      "name": "Grand Entrance",
+      "description": "You are in the Grand Entrance. You can barely see anything but dim shines of light.",
       "exits": [
         {
           "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Hallway"
-        },
-        {
-          "isLocked": false,
-          "direction": "SouthEast",
-          "adjacentRoom": "Bathroom"
-        },
+          "adjacentRoom": "Annubis' kitchen"
+        }
+      ]
+    },
+    {
+      "id": "1.2",
+      "name": "Annubis' kitchen",
+      "description": "You are in Annubis' Kitchen. You see a fire place with a unflamed torch on it",
+      "exits": [
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Closet"
+          "adjacentRoom": "Annubis' Dinning Room"
         }
       ]
     },
     {
-      "id": "Bathroom",
-      "name": "Bathroom",
-      "description": "You are in a blue bathroom",
+      "id": "1.3",
+      "name": "Annubis' Dinning Room",
+      "description": "You are in a Annubis' Dinning Room. There is a box of matches here. ",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Hallway"
+        }
+      ]
+    },
+    {
+      "id": "1.5",
+      "name": "Hallway",
+      "description": "You are in the hallway.",
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Annbuis' Bedroom"
+        }
+      ]
+    },
+    {
+      "id": "1.6",
+      "name": "Annbuis' Chamber",
+      "description": "You are in Annubis' Chamber and you see Annubis. He sees you can starts walking towards you, and you hear keys in his pokcet. From your interest in Egytian ancient History, you know that Annubis is afraid of fire. Attack him to get to the keys to next room.",
       "exits": [
         {
           "isLocked": true,
-          "direction": "West",
-          "adjacentRoom": "Hallway",
-          "keyId": "1234"
-        },
+          "direction": "East",
+          "adjacentRoom": "Stairs"
+
+        }
+      ]
+    }, 
+    {
+      "id": "1.4",
+      "name": "Stairs",
+      "description": "You are in a Room with stairs to the next floor. Go up but be warry, the challenge will only become harder....", 
+      "exits": [
         {
           "isLocked": false,
-          "direction": "NorthWest",
-          "adjacentRoom": "Bedroom"
+          "direction": "North",
+          "adjacentRoom": "GrandEntrance2"
         }
       ]
     },
     {
-      "id": "Closet",
-      "name": "Closet",
-      "description": "You are in the closet. It is dark.",
+      "id": "2.1",
+      "name": "GrandEntrance2",
+      "description": "Congradulations! You have made it to level 2, but be warry! It will only become harder. You are now in a the grand entrance to level 2, but from burning Annubis, you torch ran out of fire and you cant see anything.", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "LivingRoom2"
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "name": "LivingRoom2",
+      "description": "You are in Osiris' living room, and you see a small light from the windows. You see a patterned rug that seems like there's something under it.", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Osiris' Dinning room"
+        }
+      ]
+    }, 
+    {
+      "id": "2.3",
+      "name": "Osiris' Dinning Room",
+      "description": "You are in Osiris' Dinning Room, and you notice an open chest inside with a scratch on it.", 
       "exits": [
         {
           "isLocked": false,
           "direction": "West",
-          "adjacentRoom": "Bedroom"
+          "adjacentRoom": "Osiris' Chamber"
+        }
+      ]
+    },
+    {
+      "id": "2.4",
+      "name": "Osiris' Chamber",
+      "description": "You are in ' Osiris' Chamber, and you notice a table with matches on top.", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "HallwayToStairs2"
+        }
+      ]
+    }, 
+    {
+      "id": "2.5",
+      "name": "Stairs2",
+      "description": "You are in the room with the stairs to level 3, but blocking you is Osiris. You know that Osiris is really powerful, there's no way you can beat him barehands", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Stairs"
+        }
+      ]
+    },
+    {
+      "id": "3.1",
+      "name": "GrandEntrance3",
+      "description": "Congradulations! You've defeated Osiris! You can on floor three and you see a picture of Isis in the grand entrance. You noticed a locked Chest in the corner of the room.", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Isis' Dinning Room"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Isis'Chamber"
+        }
+      ]
+    }, 
+    {
+      "id": "3.2",
+      "name": "Isis' Chamber",
+      "description": "You see different tombs of Isis' late spouses and in one of them you see a key", 
+      "exits": [
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Isis' Dinning Room"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Isis'Chamber"
         }
       ]
     }
+    
+
+
   ]
 }
