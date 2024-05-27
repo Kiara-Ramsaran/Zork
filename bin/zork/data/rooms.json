@@ -21,6 +21,11 @@
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Annubis' Dinning Room"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Grand Entrance"
         }
       ]
     },
@@ -33,6 +38,11 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Hallway"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Annubis' kitchen"
         }
       ]
     },
@@ -45,6 +55,11 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Annbuis' Bedroom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Annubis' Dinning Room"
         }
       ]
     },
@@ -56,20 +71,31 @@
         {
           "isLocked": true,
           "direction": "East",
-          "adjacentRoom": "Stairs"
+          "adjacentRoom": "Stairs1"
+
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway"
 
         }
       ]
     }, 
     {
       "id": "1.4",
-      "name": "Stairs",
+      "name": "Stairs1",
       "description": "You are in a Room with stairs to the next floor. Go up but be warry, the challenge will only become harder....", 
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "Up",
           "adjacentRoom": "GrandEntrance2"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Annbuis' Chamber"
         }
       ]
     },
@@ -82,6 +108,11 @@
           "isLocked": false,
           "direction": "South",
           "adjacentRoom": "LivingRoom2"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs1"
         }
       ]
     },
@@ -92,8 +123,13 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "West",
           "adjacentRoom": "Osiris' Dinning room"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "GrandEntrance2"
         }
       ]
     }, 
@@ -106,6 +142,16 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Osiris' Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "LivingRoom2"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Stairs2"
         }
       ]
     },
@@ -116,8 +162,8 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "HallwayToStairs2"
+          "direction": "East",
+          "adjacentRoom": "Osiris' Dinning Room"
         }
       ]
     }, 
@@ -128,8 +174,13 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Stairs"
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Osiris' Dinning Room"
         }
       ]
     },
@@ -147,6 +198,11 @@
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Isis'Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs2"
         }
       ]
     }, 
@@ -157,14 +213,163 @@
       "exits": [
         {
           "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "GrandEntrance3"
+        }, 
+        {
+          "isLocked": false,
           "direction": "South",
-          "adjacentRoom": "Isis' Dinning Room"
+          "adjacentRoom": "Stairs3"
+        }
+      ]
+    }, 
+    {
+      "id": "3.3",
+      "name": "Isis' Dinning Room",
+      "description": "You're in Isis' Dinning Room, and you see a rug. Under the rug, you see a little bump",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "GrandEntrance3"
         }, 
         {
           "isLocked": false,
           "direction": "East",
-          "adjacentRoom": "Isis'Chamber"
+          "adjacentRoom": "Stairs3"
         }
+      ]
+    },
+    {
+      "id": "3.4",
+      "name": "Stairs3",
+      "description": "You see Isis blocking your way from the stairs. She screams to you I WANT MY JEWLERIES!!",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Isis' Chamber"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Isis' Dinning Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance4"
+        }
+      ]
+    },
+    {
+      "id": "4.1",
+      "name": "GrandEntrance4",
+      "description": "Congrats! You just surpasses Isis. You see paintings of Horus on the way and from your  egytian studies, you know that he's in his late years and he's super sick! Definitely don't get him near me!",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Horus' Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs3"
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "name": "Horus' Chamber",
+      "description": "You're in Horus' Chamber, and you see him coming to you. He runs to you, but he starts coughing mid-way.",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Stairs4"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "GrandEntrance4"
+        }
+        
+      ]
+    },
+    {
+      "id": "4.3",
+      "name": "Stairs4",
+      "description": "You've made it to the staircase to next floor, and you see a mystery chest. Luckily, it's already opened for you by soembody!",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Horus' Chambe"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance5"
+        }
+      ]
+    },
+    {
+      "id": "5.1",
+      "name": "GrandEntrance5",
+      "description": "Yay! You've made it to the fifth floor! You see a living roomm with different fruits on the table. On the table you also see a picture of Amun with his wife. Hmmm, from your past studies you knew that Amun loves his wife!",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "Stairs5"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs4"
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "name": "Stairs5",
+      "description": "Omg! You see Amun, but he's crying though... You asked him what's wrong and he said 'I miss my wife'",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "GrandEntrance5"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance6"
+        }
+      ]
+    },
+    {
+      "id": "6.1",
+      "name": "GrandEntrance6",
+      "description": "Congradulations! You've made it to the last level! You see Ra standing there wearing the headdress you were coming here for. He sees you and starts walking over, but you hear his stomach grumble.",
+      "exits": [
+      {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Window"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs5"
+        }
+      ]
+    },
+    {
+      "id": "6.2",
+      "name": "Window",
+      "description": "Congradulations! You've successfully escaped the pyramid and stole Ra's headdress. ",
+      "exits": [
       ]
     }
     
