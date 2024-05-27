@@ -21,6 +21,11 @@
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Annubis' Dinning Room"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Grand Entrance"
         }
       ]
     },
@@ -33,6 +38,11 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Hallway"
+        },
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Annubis' kitchen"
         }
       ]
     },
@@ -45,6 +55,11 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Annbuis' Bedroom"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Annubis' Dinning Room"
         }
       ]
     },
@@ -58,6 +73,13 @@
           "direction": "East",
           "adjacentRoom": "Stairs1"
 
+        },
+        {
+          "isLocked": true,
+          "direction": "South",
+          "adjacentRoom": "Hallway"
+          "adjacentRoom": "Stairs1"
+
         }
       ]
     }, 
@@ -68,8 +90,13 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
+          "direction": "Up",
           "adjacentRoom": "GrandEntrance2"
+        }, 
+        {
+          "isLocked": false,
+          "direction": "West",
+          "adjacentRoom": "Annbuis' Chamber"
         }
       ]
     },
@@ -82,6 +109,11 @@
           "isLocked": false,
           "direction": "South",
           "adjacentRoom": "LivingRoom2"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs1"
         }
       ]
     },
@@ -92,8 +124,13 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "South",
+          "direction": "West",
           "adjacentRoom": "Osiris' Dinning room"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "GrandEntrance2"
         }
       ]
     }, 
@@ -106,6 +143,16 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Osiris' Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "East",
+          "adjacentRoom": "LivingRoom2"
+        },
+        {
+          "isLocked": false,
+          "direction": "North",
+          "adjacentRoom": "Stairs2"
         }
       ]
     },
@@ -116,8 +163,8 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "North",
-          "adjacentRoom": "Stairs2"
+          "direction": "East",
+          "adjacentRoom": "Osiris' Dinning Room"
         }
       ]
     }, 
@@ -128,8 +175,13 @@
       "exits": [
         {
           "isLocked": false,
-          "direction": "West",
-          "adjacentRoom": "Stairs2"
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance3"
+        },
+        {
+          "isLocked": false,
+          "direction": "South",
+          "adjacentRoom": "Osiris' Dinning Room"
         }
       ]
     },
@@ -147,6 +199,11 @@
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Isis'Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs2"
         }
       ]
     }, 
@@ -198,6 +255,11 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Isis' Dinning Room"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance4"
         }
       ]
     },
@@ -210,6 +272,11 @@
           "isLocked": false,
           "direction": "South",
           "adjacentRoom": "Horus' Chamber"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs3"
         }
       ]
     },
@@ -240,6 +307,11 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "Horus' Chambe"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance5"
         }
       ]
     },
@@ -252,6 +324,11 @@
           "isLocked": false,
           "direction": "East",
           "adjacentRoom": "Stairs5"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs4"
         }
       ]
     },
@@ -264,6 +341,11 @@
           "isLocked": false,
           "direction": "West",
           "adjacentRoom": "GrandEntrance5"
+        },
+        {
+          "isLocked": false,
+          "direction": "Up",
+          "adjacentRoom": "GrandEntrance6"
         }
       ]
     },
@@ -276,6 +358,11 @@
           "isLocked": false,
           "direction": "North",
           "adjacentRoom": "Window"
+        },
+        {
+          "isLocked": false,
+          "direction": "Down",
+          "adjacentRoom": "Stairs5"
         }
       ]
     },
