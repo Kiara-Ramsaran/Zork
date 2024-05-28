@@ -78,6 +78,7 @@
           "isLocked": true,
           "direction": "South",
           "adjacentRoom": "Hallway"
+
         }
       ]
     }, 
