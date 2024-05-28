@@ -1,0 +1,156 @@
+{
+    "item": [
+      {
+        "id": "Torch",
+        "name": "Torch",
+        "description" : "a torch that is not lit",
+        "roomId" : "1.2",
+        "weight": "3",
+        "isOpenable": "false"
+      },
+      {
+        "id": "match1",
+        "name" : "match",
+        "description" : "a match used to light the torch",
+        "roomId" : "1.3",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "carpet1",
+        "name" : "carpet",
+        "description" : "a carpet",
+        "roomId" : "2.2",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "sword",
+        "name" : "sword",
+        "description" : "a sword",
+        "roomId" : "2.2",
+        "weight" : "4",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "chest1",
+        "name" : "chest",
+        "description" : "a chest",
+        "roomId" : "2.3",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "match2",
+        "name" : "match",
+        "description" : "a match used to light the torch",
+        "roomId" : "2.4",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "chest2",
+        "name" : "chest",
+        "description" : "a chest",
+        "roomId" : "3.1",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "tomb1",
+        "name" : "tomb",
+        "description" : "",
+        "roomId" : "3.2",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "jewelry",
+        "name" : "jewelry",
+        "description" : "nice shiny jewelry",
+        "roomId" : "3.2",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "tomb2",
+        "name" : "tomb",
+        "description" : "",
+        "roomId" : "3.2",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "tomb3",
+        "name" : "tomb",
+        "description" : "",
+        "roomId" : "3.2",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "key1",
+        "name" : "key",
+        "description" : "a key",
+        "roomId" : "3.2",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "shovel",
+        "name" : "shovel",
+        "description" : "a shovel",
+        "roomId" : "3.2",
+        "weight" : "3",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "carpet2",
+        "name" : "carpet",
+        "description" : "a carpet",
+        "roomId" : "3.3",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "pill",
+        "name" : "pill",
+        "description" : "a pill",
+        "roomId" : "3.3",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "chest3",
+        "name" : "chest",
+        "description" : "a chest",
+        "roomId" : "4.2",
+        "weight" : "999",
+        "isOpemable" : "true"
+      },
+      {
+        "id": "pictureOfMut",
+        "name" : "pictureOfMut",
+        "description" : "a picture of Mut",
+        "roomId" : "4.2",
+        "weight" : "1",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "food",
+        "name" : "food",
+        "description" : "food",
+        "roomId" : "5.1",
+        "weight" : "2",
+        "isOpemable" : "false"
+      },
+      {
+        "id": "headress",
+        "name" : "headress",
+        "description" : "headress",
+        "roomId" : "6.1",
+        "weight" : "4",
+        "isOpemable" : "false"
+      }
+    ]
+}
