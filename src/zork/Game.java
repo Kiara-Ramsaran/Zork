@@ -116,6 +116,14 @@ public class Game {
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
     }
+    else if (commandWord.equals("look")){
+      if (!command.hasSecondWord())
+        System.out.println("Look where?");
+      else{
+        String secondWord = command.getSecondWord();
+      }
+
+    }
     return false;
   }
 
