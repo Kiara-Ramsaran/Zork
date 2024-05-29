@@ -77,11 +77,7 @@
         {
           "isLocked": true,
           "direction": "South",
-<<<<<<< HEAD
           "adjacentRoom": "1.5"
-=======
-          "adjacentRoom": "Hallway"
->>>>>>> 3709e1dc5df034abf68cf68a00e0a87c7775b65f
 
         }
       ]
