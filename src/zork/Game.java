@@ -1,17 +1,7 @@
-package zork;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 public class Game {
 
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
+  public static HashMap<String, Item> itemMap = new HashMap<String, Item>();
 
   private Parser parser;
   private Room currentRoom;
@@ -22,13 +12,44 @@ public class Game {
   public Game() {
     try {
       initRooms("src\\zork\\data\\rooms.json");
+      //initItems("src\\zork\\data\\items.json");
       currentRoom = roomMap.get("1.1");
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
   }
+  private void initItems(String fileName) throws Exception {
+    Path path = Path.of(fileName);
+    String jsonString = Files.readString(path);
+    JSONParser parser = new JSONParser();
+    JSONObject json = (JSONObject) parser.parse(jsonString);
+  
+    JSONArray jsonItems = (JSONArray) json.get("items");
 
+    
+    for (Object itemObj : jsonItems) {
+      
+      String itemName = (String) ((JSONObject) itemObj).get("name");
+      String itemId = (String) ((JSONObject) itemObj).get("id");
+      String description = (String) ((JSONObject) itemObj).get("description");
+      int itemWeight = Integer.parseInt((String) ((JSONObject) itemObj).get("weight"));
+      boolean isOpenable = Boolean.parseBoolean((String) ((JSONObject) itemObj).get("isOpenable"));
+
+      String loc_id = (String) ((JSONObject) itemObj).get("room_id");
+      Item item = new Item(itemWeight, itemName, isOpenable, description);
+
+      if (loc_id != null){
+        roomMap.get(loc_id).addItem(item);
+      }else{
+        loc_id = (String) ((JSONObject) itemObj).get("item_id");
+        itemMap.get(loc_id).addItem(item);
+      }
+
+      itemMap.put(itemId, item);
+    
+    }
+  }
   private void initRooms(String fileName) throws Exception {
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
@@ -115,16 +136,6 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
-    }
-    else if (commandWord.equals("look")){
-      if (!command.hasSecondWord())
-        System.out.println("Look where? (In the form 'look + object')");
-      else{
-        String secondWord = command.getSecondWord();
-        
-        System.out.println(secondWord.getDescription)
-      }
-
     }
     return false;
   }
