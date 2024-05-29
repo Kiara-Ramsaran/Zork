@@ -3,12 +3,18 @@ package zork;
 public class Item extends OpenableObject {
   private int weight;
   private String name;
+  private String description;
   private boolean isOpenable;
+  private Inventory inventory;
+  
 
-  public Item(int weight, String name, boolean isOpenable) {
+  public Item(int weight, String name, boolean isOpenable, String description) {
     this.weight = weight;
     this.name = name;
     this.isOpenable = isOpenable;
+    this.description = description;
+    if (isOpenable)
+    inventory = new Inventory(100);
   }
 
   public void open() {
@@ -41,4 +47,19 @@ public class Item extends OpenableObject {
     this.isOpenable = isOpenable;
   }
 
+  public boolean addItem(Item item) {
+    if (isOpenable)
+      return inventory.addItem(item);
+    else 
+      return false;
+}
+
+public Item removeItem(Item item){
+  if(isOpenable)
+    return inventory.removeItem(item);
+  else
+    System.out.println("You cannot take the " + item.name + " from the " + name);
+ 
+  return null;
+}
 }
