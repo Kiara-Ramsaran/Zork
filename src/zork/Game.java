@@ -118,9 +118,11 @@ public class Game {
     }
     else if (commandWord.equals("look")){
       if (!command.hasSecondWord())
-        System.out.println("Look where?");
+        System.out.println("Look where? (In the form 'look + object')");
       else{
         String secondWord = command.getSecondWord();
+        
+        System.out.println(secondWord.getDescription)
       }
 
     }
