@@ -7,6 +7,7 @@ public class Room {
   private String roomName;
   private String description;
   private ArrayList<Exit> exits;
+  private Inventory inventory;
 
   public ArrayList<Exit> getExits() {
     return exits;
@@ -111,4 +112,11 @@ public class Room {
   public void setDescription(String description) {
     this.description = description;
   }
+  public boolean addItem(Item item) {
+    return inventory.addItem(item);
+}
+
+public Item removeItem(Item item){
+    return inventory.removeItem(item);
+}
 }
