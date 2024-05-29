@@ -305,11 +305,7 @@
       {
           "isLocked": false,
           "direction": "West",
-<<<<<<< HEAD
-          "adjacentRoom": "Horus' Chamber"
-=======
           "adjacentRoom": "4.2"
->>>>>>> c419d4cdbc41570299ed883eea4e24195a848826
         },
         {
           "isLocked": false,
