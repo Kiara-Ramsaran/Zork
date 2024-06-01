@@ -1,0 +1,9 @@
+bin/zork/Room.class
+bin/zork/Key.class
+bin/zork/Game.class
+bin/zork/God.class
+bin/zork/Inventory.class
+bin/zork/Item.class
+bin/zork/KillableGods.class
+bin/zork/NotKillableGods.class
+bin/zork/OpenableObject.class

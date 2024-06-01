@@ -40,7 +40,7 @@ public class Inventory {
   public Item removeItem(Item item) {
     //needs to be dropped in the current room and added to the current room's inventory.
     throw new UnsupportedOperationException("Unimplemented method 'removeItem'");
-}
+  }
 
   /* Returns an arraylist of all items in the inventory */
   public ArrayList<Item> getInventory(){

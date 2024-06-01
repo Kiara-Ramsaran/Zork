@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Zork",
+            "request": "launch",
+            "mainClass": "zork.Zork",
+            "projectName": "Zork_696ed4ac"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

@@ -40,7 +40,7 @@ public class OpenableObject {
   }
 
   public void setOpen(boolean isOpen) {
-    this.isOpen = isOpen;
+   this.isOpen = isOpen;
     
   }
   public void setKeyId(String keyId){
