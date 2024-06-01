@@ -30,6 +30,7 @@ public class Room {
     roomName = "DEFAULT ROOM";
     description = "DEFAULT DESCRIPTION";
     exits = new ArrayList<Exit>();
+    inventory = new Inventory(Integer.MAX_VALUE);
   }
 
   public void addExit(Exit exit) throws Exception {
@@ -119,4 +120,9 @@ public class Room {
 public Item removeItem(Item item){
     return inventory.removeItem(item);
 }
+
+//public void printInventory()
+//{
+//  inventory.printAllItems();
+//}
 }

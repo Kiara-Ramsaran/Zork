@@ -47,6 +47,11 @@ public class Item extends OpenableObject {
     this.isOpenable = isOpenable;
   }
 
+  public String getDescription()
+  {
+    return this.description;
+  }
+
   public boolean addItem(Item item) {
     if (isOpenable)
       return inventory.addItem(item);
@@ -62,4 +67,10 @@ public Item removeItem(Item item){
  
   return null;
 }
+
+//public String toString()
+//{
+//  return "ITEM- " + this.name + " " + this.description + " " + this.weight + " " + this.isOpenable;
+//}
+ 
 }
