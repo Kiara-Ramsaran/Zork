@@ -8,9 +8,10 @@ import java.util.HashMap;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
- 
+
 public class Game {
 
+  /* HashMaps for rooms, items, gods. */
   public static HashMap<String, Room> roomMap = new HashMap<String, Room>();
   public static HashMap<String, Item> itemMap = new HashMap<String, Item>();
   public static HashMap<String, God> godMap = new HashMap<String, God>();
@@ -23,148 +24,134 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("src\\zork\\data\\rooms.json");
-      initItems("src\\zork\\data\\items.json");
-      initGods("src\\zork\\data\\gods.json");
-    //  printRoomMap();
+      initRooms("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/rooms.json");
+      initItems("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/items.json");
+      initGods("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/gods.json");
       currentRoom = roomMap.get("1.1");
     } catch (Exception e) {
       e.printStackTrace();
     }
     parser = new Parser();
   }
-  /*
-  private void printRoomMap()
-  {
-    System.out.println("\n\nPrinting the inventory of each room...");
 
-    for (String roomKey: roomMap.keySet())
-    {
-      String key = roomKey.toString();
-      Room value = roomMap.get(roomKey);
-      System.out.println("\nRoom: " + key);
-      value.printInventory();
-    }
-  }
-*/
-
+  /* Sets up all gods within the game, configuring them from gods.json. 
+   * Assigns gods to designated rooms and adds each one to the god hashmap.
+   */
   private void initGods(String fileName) throws Exception {
+    /* Read gods.json */
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
-  
     JSONArray jsonItems = (JSONArray) json.get("gods");
 
-    
+    /* Loop through every god in gods.json */
     for (Object godObj : jsonItems) {
-      
+      /* Store the values of each god in variables */
       String godName = (String) ((JSONObject) godObj).get("name");
       String godId = (String) ((JSONObject) godObj).get("id");
       String description = (String) ((JSONObject) godObj).get("description");
       int godWeight = Integer.parseInt((String) ((JSONObject) godObj).get("weight"));
       boolean isOpenable = Boolean.parseBoolean((String) ((JSONObject) godObj).get("isOpenable"));
-
       String loc_id = (String) ((JSONObject) godObj).get("roomId");
       boolean isKillable = Boolean.parseBoolean((String) ((JSONObject) godObj).get("isKillable"));
       String bribeItem = (String) ((JSONObject) godObj).get("bribeItem");
 
+      /* Create a god object with the values from gods.json. */
       God god = new God(godName, isKillable, description, godWeight, bribeItem);
-
-        roomMap.get(loc_id).addItem(god);
-
-      godMap.put(godId, god);
-      
+      roomMap.get(loc_id).addItem(god); // Add the current god object to the designated room. 
+      godMap.put(godId, god); // Add the current god object to the god hashmap.
     }
-    //System.out.println("\nPrinting all Gods from Map...");
-    //System.out.println(godMap.toString());
   }
 
 
+  /* Sets up all items within the game, configuring them from items.json. Assigns items
+   * to designated rooms or inside other items and adds each one to the item hashmap.
+   */
   private void initItems(String fileName) throws Exception {
+    /* Read items.json */
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
-  
     JSONArray jsonItems = (JSONArray) json.get("items");
 
-    //System.out.println("\nProcessing items (initItems())...");
-    
+    /* Loop through every god in items.json */
     for (Object itemObj : jsonItems) {
-      
+      /* Store the values of each item in variables */
       String itemName = (String) ((JSONObject) itemObj).get("name");
       String itemId = (String) ((JSONObject) itemObj).get("id");
       String description = (String) ((JSONObject) itemObj).get("description");
       int itemWeight = Integer.parseInt((String) ((JSONObject) itemObj).get("weight"));
       boolean isOpenable = Boolean.parseBoolean((String) ((JSONObject) itemObj).get("isOpenable"));
       String keyId = (String) ((JSONObject) itemObj).get("keyId");
-
       String loc_id = (String) ((JSONObject) itemObj).get("roomId");
       boolean isKey = Boolean.parseBoolean((String) ((JSONObject) itemObj).get("isKey"));
 
+      /* Create a Item reference to assign a Key or Item object. */
       Item item;
-
       if (isKey)
       {
-        //System.out.println("\nkey object detected!");
         item = new Key(keyId, itemName, itemWeight, description);
-       
       }
       else
       {
-        //System.out.println("\nitem object detected!");
         item = new Item(itemWeight, itemName, isOpenable, description);
       }
 
+      /* If the item has a designated room, add it to the room. Else it belongs inside another item, add it inside that item. */
       if (loc_id != null){
-        //System.out.println("Item belongs in a room, adding to indicated room. Item ID = " + itemId + "  name = " + itemName + "  Location ID = " + loc_id + "  Item Weight = " + itemWeight + "  Is Openable = " + isOpenable);
         roomMap.get(loc_id).addItem(item);
       }else{
         loc_id = (String) ((JSONObject) itemObj).get("itemId");
-        //System.out.println("Item belongs inside another item, adding inside item. Item ID = " + itemId + "  name = " + itemName + "  Location ID = " + loc_id + "  Item Weight = " + itemWeight + "  Is Openable = " + isOpenable);
         itemMap.get(loc_id).addItem(item);
       }
 
+      /* Add the current Item object to the item hashmap. */
       itemMap.put(itemId, item);
-      
     }
-    //System.out.println("\n...End of processing items (initItems())...");
-
-    //System.out.println("\nPrinting all Items from Map...");
-    //System.out.println(itemMap.toString());
   }
+
+
+  /* Sets up all rooms within the game, configuring them from rooms.json
+   * Adds each room to the room hashmap.
+   */
   private void initRooms(String fileName) throws Exception {
+    /* Read rooms.json */
     Path path = Path.of(fileName);
     String jsonString = Files.readString(path);
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(jsonString);
-
     JSONArray jsonRooms = (JSONArray) json.get("rooms");
 
+    /* Loop through every room in rooms.json */
     for (Object roomObj : jsonRooms) {
-      Room room = new Room();
+      /* Store the values of each room in variables */
+      Room room = new Room(); // Create a room object to hold the values.
       String roomName = (String) ((JSONObject) roomObj).get("name");
       String roomId = (String) ((JSONObject) roomObj).get("id");
       String roomDescription = (String) ((JSONObject) roomObj).get("description");
       room.setDescription(roomDescription);
       room.setRoomName(roomName);
 
+      /* Read the exits of the current room from rooms.json */
       JSONArray jsonExits = (JSONArray) ((JSONObject) roomObj).get("exits");
       ArrayList<Exit> exits = new ArrayList<Exit>();
+      /* Loop through the exits of the current room. */
       for (Object exitObj : jsonExits) {
+        /* Store the values of each exit in variables */
         String direction = (String) ((JSONObject) exitObj).get("direction");
         String adjacentRoom = (String) ((JSONObject) exitObj).get("adjacentRoom");
         String keyId = (String) ((JSONObject) exitObj).get("keyId");
         Boolean isLocked = (Boolean) ((JSONObject) exitObj).get("isLocked");
         Boolean isOpen = (Boolean) ((JSONObject) exitObj).get("isOpen");
+
+        /* Create a Exit object with the values for the current exit. */
         Exit exit = new Exit(direction, adjacentRoom, isLocked, keyId, isOpen);
         exits.add(exit);
       }
-      room.setExits(exits);
-      roomMap.put(roomId, room);
-
-      //System.out.println("Room ID = " + roomId + "  name = " + roomName);
+      room.setExits(exits);  // Set the exits of the room.
+      roomMap.put(roomId, room);  // Add the current Room object to the room hashmap.
     }
   }
 
@@ -263,4 +250,21 @@ public class Game {
       System.out.println(currentRoom.longDescription());
     }
   }
+
+  /* Can be used for testing to print all items in every room.
+   * Must also uncomment toString() of Key, Item, God classes.
+   * Must also uncomment printInventory() of Room class.
+   */ 
+//  private void printRoomMap()
+//  {
+//    System.out.println("\n\nPrinting the inventory of each room...");
+
+//    for (String roomKey: roomMap.keySet())
+//    {
+//      String key = roomKey.toString();
+//      Room rm = roomMap.get(roomKey);
+//      System.out.println("\nRoom: " + key);
+//      rm.printInventory();
+//    }
+//  }
 }
