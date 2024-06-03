@@ -1,61 +1,61 @@
 {
-    "gods": [
-      {
-        "id": "Anubis",
-        "name": "Anubis",
-        "description" : "a god",
-        "roomId" : "1.6",
-        "weight": "999",
-        "isOpenable": "false",
-        "isKillable": "yes"
-      },
-      {
-        "id": "Osiris",
-        "name" : "Osiris",
-        "description" : "a god",
-        "roomId" : "2.5",
-        "weight" : "999",
-        "isOpenable" : "false",
-        "isKillable": "yes"
-      },
-      {
-        "id": "Isis",
-        "name" : "Isis",
-        "description" : "a god",
-        "roomId" : "3.4",
-        "weight" : "999",
-        "isOpenable" : "false",
-        "isKillable": "no",
-        "bribeItem": "jewelry"
-      },
-      {
-        "id": "Horus",
-        "name" : "Horus",
-        "description" : "a god",
-        "roomId" : "4.2",
-        "weight" : "999",
-        "isOpenable" : "false",
-        "isKillable": "yes"
-      },
-      {
-        "id": "Amun",
-        "name" : "Amun",
-        "description" : "a god",
-        "roomId" : "5.2",
-        "weight" : "999",
-        "isOpenable" : "false",
-        "isKillable": "no",
-        "bribeItem": "picture"
-      },
-      {
-        "id": "Ra",
-        "name" : "Ra",
-        "description" : "a god",
-        "roomId" : "6.1",
-        "weight" : "999",
-        "isOpenable" : "false",
-        "isKillable": "yes",
-        "bribeItem": "food"
-      }
-    ]
+  "gods": [
+    {
+      "id": "Anubis",
+      "name": "Anubis",
+      "description": "a god",
+      "roomId": "1.6",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "true"
+    },
+    {
+      "id": "Osiris",
+      "name": "Osiris",
+      "description": "a god",
+      "roomId": "2.5",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "true"
+    },
+    {
+      "id": "Isis",
+      "name": "Isis",
+      "description": "a god",
+      "roomId": "3.4",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "false",
+      "bribeItem": "jewelry"
+    },
+    {
+      "id": "Horus",
+      "name": "Horus",
+      "description": "a god",
+      "roomId": "4.2",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "true"
+    },
+    {
+      "id": "Amun",
+      "name": "Amun",
+      "description": "a god",
+      "roomId": "5.2",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "false",
+      "bribeItem": "pictureOfMut"
+    },
+    {
+      "id": "Ra",
+      "name": "Ra",
+      "description": "a god",
+      "roomId": "6.1",
+      "weight": "999",
+      "isOpenable": "false",
+      "isKillable": "true",
+      "bribeItem": "food"
+    }
+  ]
 }
