@@ -1,4 +1,4 @@
-package zork;
+package Zork.src.zork;
 
 /* 
  * This class represents the gods of the game.
@@ -6,19 +6,25 @@ package zork;
  * must be bribed to distract them. 
  */
 public class God extends Item{
-    private boolean isDefeated = false; //Tracks if the god has been defeated.
-    //private String name;
-    private boolean killable;           //Indicates if a god can be killed.
-    private String bribeItem;           //Hold the item name that can bribe/distract the god, null otherwise.
-    //private String description;
+    private boolean isDefeated; //Tracks if the god has been defeated.
+    private boolean killable;   //Indicates if a god can be killed.
+    private String bribeItem;   //Hold the item name that can bribe/distract the god, null otherwise.
 
     /* Constructor */
     public God(String name, boolean k, String description, int weight, String bribe){
         super(weight, name, false, description);
-        //this.name = n;
         this.killable = k;
         this.bribeItem = bribe;
-        //this.description = des;
+        this.isDefeated = false;
+    }
+
+    /* Will return if the god has been defeated.
+     * Returns true, if the god has been defeated.
+     * Return false, otherwise.
+     */
+    public boolean defeatedStatus()
+    {
+        return isDefeated;
     }
 
     /* 
@@ -50,8 +56,24 @@ public class God extends Item{
         return isBribeSuccessful;
     }
 
+    /*
+     * An attempt is made to bribe/distract the god with
+     * the item object passed in 'bribeAttempt'.
+     * Returns true, if the attempt was successful, false
+     * otherwise.
+     */
+    public boolean bribe(Item bribeAttempt){
+        boolean isBribeSuccessful = false;
+        if((!killable) && ((bribeAttempt.getName()).equals(this.bribeItem))){
+            isBribeSuccessful = true;
+        }
+        return isBribeSuccessful;
+    }
+
+    /* Can be used for testing to print God variables. */ 
     //public String toString()
     //{
-    //  return "GOD- " + this.getName() + " " + this.getDescription() + " " + this.getWeight() + " " + this.killable + " " + this.bribeItem;
+    //  return "GOD- " + this.getName() + " " + this.getDescription() + " " + this.getWeight() + " " + this.killable + " " + this.bribeItem + " " + this.defeatedStatus();
     //}
+    
 }
