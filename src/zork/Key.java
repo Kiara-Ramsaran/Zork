@@ -19,8 +19,9 @@ public class Key extends Item {
     return keyId;
   }
 
+  /* Can be used for testing to print Key variables. */ 
   //public String toString()
- //{
-  // return "KEY- " + this.getName() + " " + this.getDescription() + " " + this.getKeyId() + " " + this.getWeight() + " " + this.isOpenable();
- //}
+  //{
+  //  return "KEY- " + this.getName() + " " + this.getDescription() + " " + this.getKeyId() + " " + this.getWeight();
+  //}
 }
