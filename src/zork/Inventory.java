@@ -37,16 +37,38 @@ public class Inventory {
       return false;
     }
   }
+
+  /* Removes an item from the inventory.
+   * Returns the item that was removed, if found.
+   * Returns null, if the item was not found in the inventory.
+   */
   public Item removeItem(Item item) {
-    //needs to be dropped in the current room and added to the current room's inventory.
-    throw new UnsupportedOperationException("Unimplemented method 'removeItem'");
+    //throw new UnsupportedOperationException("Unimplemented method 'removeItem'");
+    
+    /* Checks if the item passed in exists in the inventory. */
+    if (items.contains(item))
+    {
+      int indexToRemove = -1;
+
+      /* Searches for and removes the item from inventory. */
+      for(int i=0; (i<items.size()) && (indexToRemove == -1);i++)
+      {
+        if (items.get(i) == item)
+        {
+          items.remove(i);
+          return item;
+        }
+      }
+    }
+    return null;
   }
 
   /* Returns an arraylist of all items in the inventory */
-  public ArrayList<Item> getInventory(){
+  public ArrayList<Item> getInventoryItems(){
     return items;
   }
 
+  /* Can be used for testing to print all items in the current inventory. */ 
   //public void printAllItems(){
   //  System.out.println("Printing all inventory items...");
   //  for(Item i:items)
