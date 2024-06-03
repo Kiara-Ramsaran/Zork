@@ -1,4 +1,4 @@
-package Zork.src.zork;
+package zork;
 
 /* 
  * This class represents the gods of the game.
