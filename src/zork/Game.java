@@ -76,7 +76,7 @@ public class Game {
     JSONObject json = (JSONObject) parser.parse(jsonString);
     JSONArray jsonItems = (JSONArray) json.get("items");
 
-    /* Loop through every god in items.json */
+    /* Loop through every item in items.json */
     for (Object itemObj : jsonItems) {
       /* Store the values of each item in variables */
       String itemName = (String) ((JSONObject) itemObj).get("name");
