@@ -24,9 +24,9 @@ public class Game {
    */
   public Game() {
     try {
-      initRooms("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/rooms.json");
-      initItems("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/items.json");
-      initGods("/Users/ryan/Documents/VSCode/Java/AP/src/Zork/src/zork/data/gods.json");
+      initRooms("src\\zork\\data\\rooms.json");
+      initItems("src\\zork\\data\\items.json");
+      initGods("src\\zork\\data\\gods.json");
       currentRoom = roomMap.get("1.1");
     } catch (Exception e) {
       e.printStackTrace();
