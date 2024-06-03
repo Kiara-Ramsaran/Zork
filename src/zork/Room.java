@@ -121,6 +121,13 @@ public Item removeItem(Item item){
     return inventory.removeItem(item);
 }
 
+/* Returns the inventory of the room. */
+public Inventory getInventory()
+{
+  return inventory;
+}
+
+/* Can be used for testing to print all items in a room's inventory. */ 
 //public void printInventory()
 //{
 //  inventory.printAllItems();
