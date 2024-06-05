@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -197,6 +199,7 @@ public class Game {
       return false;
     }
 
+    //NO COMMANDS ARE COMPLETED BECAUSE ITEMS INVENTORY ARRAY LIST IS NOT ACCESSABLE
     String commandWord = command.getCommandWord();
     if (commandWord.equals("help"))
       printHelp();
@@ -209,6 +212,29 @@ public class Game {
         return true; // signal that we want to quit
     } else if (commandWord.equals("eat")) {
       System.out.println("Do you really think you should be eating at a time like this?");
+    }else if(commandWord.equals("take")){
+      takeItem(command);
+    }else if(commandWord.equals("look")){
+      if(!command.hasSecondWord()){
+        Scanner thingy = new Scanner(System.in);
+        System.out.println("Look at what?");
+        String thingToSee = thingy.nextLine();
+        System.out.println(thingToSee.getDescription());
+      else if((command.getSecondWord())== item.name)
+        System.out.println();
+      }
+    }else if(commandWord.equals("open")){
+      openItem(command);
+    }else if(commandWord.equals("close")){
+      closeItem(command);
+    }else if(commandWord.equals("drop")){
+      throwItem(command);
+    }else if(commandWord.equals("use")){
+      useItem(command);
+    }else if(commandWord.equals("attack")){
+      attackGod(command);
+    }else if(commandWord.equals("jump")){
+      jumpOut(command);
     }
     return false;
   }
@@ -250,6 +276,67 @@ public class Game {
       System.out.println(currentRoom.longDescription());
     }
   }
+//allows you to pick up an abject- AK
+  private void takeItem(Command command) {
+    if(!command.hasSecondWord()){
+      System.out.println("Take What?");
+      return;
+    }
+
+    String thing = command.getSecondWord();
+//attempts to ad an item to player's inventory
+    for(Item item:itemMap.){
+      if(Item item.name == thing){
+        playerInventory.addItem(item);
+      }
+    }
+  }
+//Allows player to open an item
+  private void openItem(Command command){
+    if(!command.hasSecondWord()){
+      System.out.println("Open What?");
+    }
+    //takes in the item, uses an if else statement to see if it is openable
+    //will check to see if the item is locked, if it is, it will ask what to open it with. If it is not locked, status will be set to open
+    //once a key is used, the item's status will be set to open/unlocked
+  }
+//Allows player to close an item
+  private void closeItem(Command command){
+    if(!command.hasSecondWord()){
+      System.out.println("Close What?");
+    }
+    //takes in the item, uses an if else statement to see if it is closeable, if it is, will change the status to close
+
+  }
+//Removes an item from the player's inventory
+  private void dropItem(Command command){
+    if(!command.hasSecondWord()){
+      System.out.println("Drop What?");
+    }
+    //uses the removeItem function to remove the object from the personal inventory array list
+  } 
+//Can be used with a god or to open something locked.
+  private void useItem(Command command){
+    if(!command.hasSecondWord()){
+      System.out.println("Use What?");
+    }
+    //the item will be used in the way it is meant
+  }
+
+  //Specific use of useItem function, only used against gods
+  private void attackGod(Command command){
+    System.out.print("Using what?");
+    command.useItem;
+    }
+    //supposed to call the useItem function to "attack" the god
+  }
+
+  //only used at the end of the game to escape the crumbling
+  private void jumpOut(Command command){
+    if () //not in 6.2
+      System.out.println("You cannot jump anywhere");
+    else //call description for window
+  }
 
   /* Can be used for testing to print all items in every room.
    * Must also uncomment toString() of Key, Item, God classes.
@@ -267,4 +354,4 @@ public class Game {
 //      rm.printInventory();
 //    }
 //  }
-}
+
