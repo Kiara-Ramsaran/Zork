@@ -20,7 +20,7 @@ public class Game {
 
   private Parser parser;
   private Room currentRoom;
-  Inventory playerInventory = new Inventory(10);
+  private Inventory playerInventory = new Inventory(10);
 
   /**
    * Create the game and initialise its internal map.
