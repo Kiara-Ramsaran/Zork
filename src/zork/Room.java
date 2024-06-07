@@ -133,3 +133,15 @@ public Inventory getInventory()
 //  inventory.printAllItems();
 //}
 }
+/*For rooms.json: 
+
+For each room, I've basically named it like (x.y) where x is the level/floor the player is on and y is the room they are in according to our drawn map 
+I've also added a description to each room so the player will know which room they are in 
+
+for the grand entrance of each floor, I've added a description of the god in each floor so the players know how to defeat them 
+and for each room, there's atleast one exist for each room. 
+
+If there's an exist from 1.1 to 1.2, there will be the same exist from 1.2 back to 1.1
+
+The directions I've used are North, South, East, West from the overall perspective, not the player's
+*/
