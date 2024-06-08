@@ -68,6 +68,15 @@ public class Inventory {
     return items;
   }
 
+   /* Determines if an item exists in the inventory
+   * Returns true, if the item exists in the inventory.
+   * Returns false, otherwise.
+   */
+  public boolean contains(Item item)
+  {
+    return items.contains(item);
+  }
+
   /* Can be used for testing to print all items in the current inventory. */ 
   //public void printAllItems(){
   //  System.out.println("Printing all inventory items...");
