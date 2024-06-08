@@ -1,8 +1,8 @@
 {
   "items": [
     {
-      "id": "Torch",
-      "name": "Torch",
+      "id": "torch",
+      "name": "torch",
       "description" : "a torch that is not lit",
       "roomId": "1.2",
       "weight": "3",
